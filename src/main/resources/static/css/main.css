@@ -1,0 +1,136 @@
+.main{
+    margin-top: 50px;
+    width: 100%;
+}
+
+/* Style Component 1  */
+
+.component-1{
+    height: 400px;
+    background: linear-gradient(rgba(101, 84, 72, 0.7), rgba(101, 84, 72, 0.7)), url(../image/thumb-1920-29492.jpg);
+    color: white;
+    background-size: cover;
+    background-attachment: fixed;
+    /* background-position: 0 100px; */
+    display: flex;
+    align-items: center;
+}
+
+.component-1 p{
+    font-size: 30px;
+}
+
+.component-1 span{
+    font-size: 20px;
+}
+
+/* Style Component 2 */
+
+.component-2{
+    margin-top: 50px;
+    background-color: #003c77;
+}
+
+.item{
+    color: white;
+    height: 50px;
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.component-2 .room-style{
+    position: relative;
+    padding-left: 0;
+    margin: 70px 0;
+    background-color: white;
+    height: 600px;
+    margin-right: 70px;
+    margin-left: 20px;
+    box-shadow: .4px 4px 12px rgba(0, 0, 0, .2);
+}
+
+.item-img{
+    /* width: 100%;
+    height: 225px;
+    width: 285px; */
+    /* padding-right: 0; */
+    background-size: cover;
+}
+
+.room-style .room-content{
+    margin-top: 20px;
+    padding-left: 20px;
+}
+
+.room-content .name-hotel{
+    text-decoration: none;
+    color: #4128b3;
+    text-shadow: .4px .4px 5px rgba(0, 0, 0, .2);
+}
+
+.room-content .name-hotel:hover{
+    color: rgb(0, 255, 170);
+}
+
+.room-style .set-location-in-roomContent{
+    position: absolute;
+    bottom: 50px;
+    text-shadow: .4px .4px 5px rgba(0, 0, 0, .2);
+}
+
+
+@media (max-width: 765px){
+    .room-style{
+        height: 500px;
+        width: 450px;
+    }
+
+    img{
+        width: 450px !important;
+    }
+
+    .room-content, .set-location-in-roomContent{
+        font-size: 20px;
+    }
+}
+
+@media only screen 
+  and (min-width: 768px) 
+  and (max-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 1) {
+    .room-homepage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+    }
+    
+    .room-style{
+        width: 500px;
+        height: 500px !important;
+        padding-right: 0;
+    }
+
+    .room-style img{
+        width: 100% !important;
+    }
+}
+
+@media only screen
+    and (min-width: 1025px)
+    and (max-width: 1200px)
+    and (-webkit-min-device-pixel-ratio: 1){
+        .room-homepage{
+            display: flex;
+            flex-direction: row;
+        }
+
+        .room-style{
+            margin: 30px 35px !important;
+        }
+
+        img{
+            width: 240px !important;
+        }
+    }
