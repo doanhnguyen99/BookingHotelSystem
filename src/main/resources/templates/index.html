@@ -1,311 +1,349 @@
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
-  <title>Booking Hotel Online</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-  <link rel="stylesheet" href="./css/header.css">
-  <link rel="stylesheet" href="./css/main.css">
-  <link rel="stylesheet" href="./css/footer.css">
-  <link rel="stylesheet" href="./css/modal.css">
+    <meta charset="UTF-8">
+    <title>Booking Hotel Online</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    <link rel="stylesheet" href="./css/modal.css">
 </head>
 
 <body>
-
-  <!-- Header -->
-  <div class="header">
+<!-- Header -->
+<div class="header">
     <nav class="navbar sticky-top navbar-expand-lg bg-dark custom-header">
-      <div class="container">
-        <a class="navbar-brand" href="#">HaNoi Hotel</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <i class="fas fa-bars"></i>
-        </button>
-  
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto w-100 justify-content-end">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./about.html">About</a>
-              <li class="nav-item">
-                <a class="nav-link" href="./room.html">Room</a>
-                <li class="nav-item">
-                  <a class="nav-link" href="./blog.html">Blog</a>
-                <li class="nav-item">
-                  <a href="./login.html"><button class="btn btn-danger" type="submit">Login</button></a>
-                  <a href="./register.html"><button class="btn btn-success" type="submit">Register</button></a>
-                </li>
-          </ul>
+        <div class="container">
+            <a class="navbar-brand" href="#">HaNoi Hotel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{about}">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{room}">Room</a>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{blog}">Blog</a>
+                    <li class="nav-item">
+                        <a th:href="@{login}">
+                            <button class="btn btn-danger" type="submit">Login</button>
+                        </a>
+                        <a th:href="@{register}">
+                            <button class="btn btn-success" type="submit">Register</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </div>
     </nav>
 
     <div class="container">
-      <!-- Slogan website -->
-      <div class="row slogan-header">
-        <div class="item-slogan">
-          <p class="h1 uppercaser font-weight-bold">Welcome to HaNoi International Hotel</p>
+        <!-- Slogan website -->
+        <div class="row slogan-header">
+            <div class="item-slogan">
+                <p class="h1 uppercaser font-weight-bold">Welcome to HaNoi International Hotel</p>
+            </div>
         </div>
-      </div>
-      
-      <!-- divide ruler -->
-      <div class="row">
-        <div class="wrap-divide">
-          <div class="devider"></div>
-        </div>
-      </div>
-      </div>
 
-      <div class="container">
+        <!-- divide ruler -->
+        <div class="row">
+            <div class="wrap-divide">
+                <div class="devider"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
         <div class="row slogan-content">
-          <div class="item-content-header">
-            <p style="font-size: 20px;">A Perfect Place To Stay</p>
-          </div>
+            <div class="item-content-header">
+                <p style="font-size: 20px;">A Perfect Place To Stay</p>
+            </div>
         </div>
 
         <div class="row btn-find">
-          <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
+            <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Find Out More</a>
         </div>
 
         <div class="row date-book">
-          <div class="col-md-5">
-            <label for="#">Check-in Date</label>
-            <input class="form-control" type="date" placeholder="Check-in Date">
-          </div>
-          <div class="col-md-5">
-            <label for="#">Check-out Date</label>
-            <input class="form-control" type="date" placeholder="Check-out Date">
-          </div>
-          <div class="col-md-2" style="padding-top: 33px;">
-            <button type="button" class="btn btn-success">Room Suggest</button>
-          </div>
+            <div class="col-md-5">
+                <label for="#">Check-in Date</label>
+                <input class="form-control" type="date" placeholder="Check-in Date">
+            </div>
+            <div class="col-md-5">
+                <label for="#">Check-out Date</label>
+                <input class="form-control" type="date" placeholder="Check-out Date">
+            </div>
+            <div class="col-md-2" style="padding-top: 33px;">
+                <button type="button" class="btn btn-success">Room Suggest</button>
+            </div>
         </div>
-
-      </div>
 
     </div>
-  </div>
 
-  <!-- Main Component -->
+</div>
+</div>
 
-  <div class="main">
+<!-- Main Component -->
+
+<div class="main">
 
     <div class="component-1">
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-3" style="text-align: center;">
-            <p>50</p>
-            <span>Hotel Branch</span>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-3" style="text-align: center;">
+                    <p>50</p>
+                    <span>Hotel Branch</span>
+                </div>
 
-          <div class="col-sm-3" style="text-align: center;">
-            <p>20000</p>
-            <span>Happy Guests</span>
-          </div>
+                <div class="col-sm-3" style="text-align: center;">
+                    <p>20000</p>
+                    <span>Happy Guests</span>
+                </div>
 
-          <div class="col-sm-3" style="text-align: center;">
-            <p>100</p>
-            <span>Room</span>
-          </div>
+                <div class="col-sm-3" style="text-align: center;">
+                    <p>100</p>
+                    <span>Room</span>
+                </div>
 
-          <div class="col-sm-3" style="text-align: center;">
-            <p>100</p>
-            <span>Destionations</span>
-          </div>
+                <div class="col-sm-3" style="text-align: center;">
+                    <p>100</p>
+                    <span>Destionations</span>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
 
     <div class="component-2">
-      <div class="container">
-        <div class="row">
-          <div class="item"><h1>LUXURY ACCOMMODATION</h1></div>
-          <div class="item"><h2>ELEGANTLY STYLISH, LIGHT-FILLED ROOMS</h2></div>
-          <div class="item">
-            <p>Hanoi International Hotel provides 411 ample and luminous rooms, all decorated in warm colors with superior quality wooden furniture. They are equipped with a full range of facilities and exclusive services to ensure that our guests enjoy an unforgettably pleasant stay. The greatest care has been taken of even the tiniest details to guarantee that your stay in Hanoi is a truly exceptional experience.</p>
-          </div>
+        <div class="container">
+            <div class="row">
+                <div class="item"><h1>LUXURY ACCOMMODATION</h1></div>
+                <div class="item"><h2>ELEGANTLY STYLISH, LIGHT-FILLED ROOMS</h2></div>
+                <div class="item">
+                    <p>Hanoi International Hotel provides 411 ample and luminous rooms, all decorated in warm colors
+                        with superior quality wooden furniture. They are equipped with a full range of facilities and
+                        exclusive services to ensure that our guests enjoy an unforgettably pleasant stay. The greatest
+                        care has been taken of even the tiniest details to guarantee that your stay in Hanoi is a truly
+                        exceptional experience.</p>
+                </div>
+            </div>
+
+            <div class="row room-homepage">
+                <div class="col-lg-3 room-style">
+                    <div class="item-img">
+                        <img src="./image/home/deluxe-room.jpg" alt="deluxe-room" style="height: 225px; width: 285px;">
+                    </div>
+                    <div class="room-content">
+                        <a href="#" class="name-hotel"><p>DELUXE ROOM</p></a>
+                        <p>Located between the 4th and 13rd floor with sweeping view overlooking the vibrant city.</p>
+                        <div class="set-location-in-roomContent">
+                            <a href="#">Read more &rarr;</a>
+                            <p style="top: 50px;">Rates from $ 75.00</p>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                    data-target="#exampleModal">BOOK NOW
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 room-style">
+                    <div class="item-img">
+                        <img src="./image/home/grand-deluxe.jpg" alt="grand_deluxe-room"
+                             style="height: 225px; width: 285px;">
+                    </div>
+                    <div class="room-content">
+                        <a href="#" class="name-hotel"><p>GRAND DELUXE ROOM</p></a>
+                        <p>Providing an average of 34sqm of comfortable living space, The Grand Deluxe Room offers a
+                            perfect blend of classical elegance.</p>
+                        <div class="set-location-in-roomContent">
+                            <a href="#">Read more &rarr;</a>
+                            <p style="top: 50px;">Rates from $ 96.99</p>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                    data-target="#exampleModal">BOOK NOW
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 room-style">
+                    <div class="item-img">
+                        <img src="./image/home/Club+Room.jpg" alt="Club-Room" style="height: 225px; width: 285px;">
+                    </div>
+                    <div class="room-content">
+                        <a href="#" class="name-hotel"><p>CLUB ROOM</p></a>
+                        <p>Located on upper level with panoramic view of Thu Le lake, the Club Room is the perfect
+                            retreat to leave behind the hassle of daily life and experience.</p>
+                        <div class="set-location-in-roomContent">
+                            <a href="#">Read more &rarr;</a>
+                            <p style="top: 50px;">Rates from $ 121.44</p>
+                            <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                                    data-target="#exampleModal">BOOK NOW
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        <div class="row room-homepage">
-          <div class="col-lg-3 room-style">
-            <div class="item-img">
-              <img src="./image/home/deluxe-room.jpg" alt="deluxe-room" style="height: 225px; width: 285px;">
-            </div>
-            <div class="room-content">
-              <a href="#" class="name-hotel"><p>DELUXE ROOM</p></a>
-              <p>Located between the 4th and 13rd floor with sweeping view overlooking the vibrant city.</p>
-              <div class="set-location-in-roomContent">
-                <a href="#">Read more &rarr;</a>
-                <p style="top: 50px;">Rates from $ 75.00</p>
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">BOOK NOW</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 room-style">
-            <div class="item-img">
-              <img src="./image/home/grand-deluxe.jpg" alt="grand_deluxe-room" style="height: 225px; width: 285px;">
-            </div>
-            <div class="room-content">
-              <a href="#" class="name-hotel"><p>GRAND DELUXE ROOM</p></a>
-              <p>Providing an average of 34sqm of comfortable living space, The Grand Deluxe Room offers a perfect blend of classical elegance.</p>
-              <div class="set-location-in-roomContent">
-                <a href="#">Read more &rarr;</a>
-                <p style="top: 50px;">Rates from $ 96.99</p>
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">BOOK NOW</button>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 room-style">
-            <div class="item-img">
-              <img src="./image/home/Club+Room.jpg" alt="Club-Room" style="height: 225px; width: 285px;">
-            </div>
-            <div class="room-content">
-              <a href="#" class="name-hotel"><p>CLUB ROOM</p></a>
-              <p>Located on upper level with panoramic view of Thu Le lake, the Club Room is the perfect retreat to leave behind the hassle of daily life and experience.</p>
-              <div class="set-location-in-roomContent">
-                <a href="#">Read more &rarr;</a>
-                <p style="top: 50px;">Rates from $ 121.44</p>
-                <button type="button" class="btn btn-outline-primary" data-toggle="modal" data-target="#exampleModal">BOOK NOW</button>
-              </div>
-            </div>
-          </div>
-          
-        </div>
-      </div>
     </div>
-  </div>
+</div>
 
-  <!-- Footer -->
-  <footer>
+<!-- Footer -->
+<footer>
     <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <p class="h4">About HaNoi Hotel</p>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-          
-          <div class="row logo-footer">
-              <a href="fb.com" class="item-icon-logo"><i class="fab fa-facebook fa-4x "></i></a>
+        <div class="row">
+            <div class="col-md-4">
+                <p class="h4">About HaNoi Hotel</p>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and
+                    Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the
+                    countries Vokalia and Consonantia, there live the blind texts.</p>
 
-              <a href="fb.com" class="item-icon-logo"><i class="fab fa-instagram fa-4x" style="border-radius: 5px;"></i></a>
+                <div class="row logo-footer">
+                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-facebook fa-4x "></i></a>
 
-              <a href="fb.com" class="item-icon-logo"><i class="fab fa-twitter fa-4x"></i></a>
-          </div>
+                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-instagram fa-4x"
+                                                               style="border-radius: 5px;"></i></a>
+
+                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-twitter fa-4x"></i></a>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="h4">Have a Questions ?</div>
+                <div class="content-footer">
+                    <p><i class="fas fa-map-marker-alt fa-2x"></i> 144 Xuân Thủy - Cầu Giấy - Hà Nội</p>
+                    <p><i class="fas fa-phone fa-2x"></i> +8439 3929 1999</p>
+                    <p><i class="fas fa-envelope fa-2x"></i> doanhnh0801@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 wrapper-feedback">
+                <div class="feedback">
+                    <p class="h3" style="padding-bottom: 30px;">Feedback</p>
+                    <!-- Name -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Name" aria-label="Name"
+                               aria-describedby="basic-addon1" required>
+                    </div>
+                    <!-- Email -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                               aria-describedby="basic-addon1" required>
+                    </div>
+                    <!-- Phone -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Phone</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Phone" aria-label="Phone"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <!-- Content -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Content</span>
+                        </div>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-outline-primary btn-lg"
+                            style="float: right; margin-top: 15px;"><i class="fas fa-share"></i> Send
+                    </button>
+
+                </div>
+            </div>
+
         </div>
-
-        <div class="col-md-4">
-          <div class="h4">Have a Questions ?</div>
-          <div class="content-footer">
-            <p><i class="fas fa-map-marker-alt fa-2x"></i> 144 Xuân Thủy - Cầu Giấy - Hà Nội</p>
-            <p><i class="fas fa-phone fa-2x"></i> +8439 3929 1999</p>
-            <p><i class="fas fa-envelope fa-2x"></i>   doanhnh0801@gmail.com</p>
-          </div>
-        </div>
-
-        <div class="col-md-4 wrapper-feedback">
-          <div class="feedback">
-            <p class="h3" style="padding-bottom: 30px;">Feedback</p>
-            <!-- Name -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Name</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" required>
-            </div>
-            <!-- Email -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Email</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required>
-            </div>
-            <!-- Phone -->
-            <div class="input-group mb-3">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="basic-addon1">Phone</span>
-              </div>
-              <input type="text" class="form-control" placeholder="Phone" aria-label="Phone" aria-describedby="basic-addon1">
-            </div>
-            <!-- Content -->
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <span class="input-group-text">Content</span>
-              </div>
-              <textarea class="form-control" aria-label="With textarea"></textarea>
-            </div>
-
-            <button type="button" class="btn btn-outline-primary btn-lg" style="float: right; margin-top: 15px;"><i class="fas fa-share"></i> Send</button>
-
-          </div>
-        </div>
-
-      </div>
     </div>
-  </footer>
-
+</footer>
 
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content modal-popout-bg">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Booking Room</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <!-- Type -->
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <label class="input-group-text" for="inputGroupSelect01">Room Type</label>
-          </div>
-          <select class="custom-select" id="inputGroupSelect01">
-            <option selected>Choose...</option>
-            <option value="1">Deluxe Room</option>
-            <option value="2">Grand Deluxe Room</option>
-            <option value="3">Club Room</option>
-          </select>
-        </div>
-        <!-- Amount -->
-        <div class="input-group mb-3">
-          <div class="input-group-prepend">
-            <span class="input-group-text" id="inputGroup-sizing-default">Total Room</span>
-          </div>
-          <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
-        </div>
-        <!-- Check-in & Check-out -->
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6" style="padding-left: 0;">
-              <label>Check-in Date</span>
-              <input class="form-control" type="date">
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content modal-popout-bg">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Booking Room</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
             </div>
-            <div class="col-md-6" style="padding-left: 0;">
-              <label>Check-out Date</span>
-              <input class="form-control" type="date">
+            <div class="modal-body">
+                <!-- Type -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <label class="input-group-text" for="inputGroupSelect01">Room Type</label>
+                    </div>
+                    <select class="custom-select" id="inputGroupSelect01">
+                        <option selected>Choose...</option>
+                        <option value="1">Deluxe Room</option>
+                        <option value="2">Grand Deluxe Room</option>
+                        <option value="3">Club Room</option>
+                    </select>
+                </div>
+                <!-- Amount -->
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Total Room</span>
+                    </div>
+                    <input type="number" class="form-control" aria-label="Default"
+                           aria-describedby="inputGroup-sizing-default">
+                </div>
+                <!-- Check-in & Check-out -->
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6" style="padding-left: 0;">
+                            <label>Check-in Date</span>
+                                <input class="form-control" type="date">
+                        </div>
+                        <div class="col-md-6" style="padding-left: 0;">
+                            <label>Check-out Date</span>
+                                <input class="form-control" type="date">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Button -->
+                <button type="button" class="btn btn-warning" style="margin-top: 20px;">Booking</button>
+
+
             </div>
-          </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+            </div>
         </div>
-
-        <!-- Button -->
-        <button type="button" class="btn btn-warning" style="margin-top: 20px;">Booking</button>
-
-
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
     </div>
-  </div>
 </div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/js/bootstrap.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 </body>
+</html>
