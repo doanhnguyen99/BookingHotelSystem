@@ -26,13 +26,9 @@ public class LoginController {
             newUser.setPassword(password);
 //            System.out.println(newUser);
             userService.addUser(newUser);
-            return "redirect:login";
+            return "redirect:login?success";
         }
     }
-//    @GetMapping("/getOneUser")
-//    public Optional<UserEntity> getOneUser(String email, String password){
-//        return userService.getUserByEmailAndPassword(email, password);
-//    }
 
 
     @PostMapping("/loginUser")

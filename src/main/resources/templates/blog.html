@@ -1,238 +1,275 @@
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Blog Hotel Online</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+          integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/about.css">
     <link rel="stylesheet" href="./css/blog.css">
-  </head>
+</head>
 
 <body>
-    <div class="header-blog">
-      <nav class="navbar sticky-top navbar-expand-lg bg-dark custom-header">
+<div class="header-blog">
+    <nav class="navbar sticky-top navbar-expand-lg bg-dark custom-header">
         <div class="container">
-          <a class="navbar-brand" href="#">HaNoi Hotel</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-          </button>
-    
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto w-100 justify-content-end">
-              <li class="nav-item active">
-                <a class="nav-link" href="./index.html">Home <span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./about.html">About</a>
-                <li class="nav-item">
-                  <a class="nav-link" href="./room.html">Room</a>
-                  <li class="nav-item">
-                    <a class="nav-link" href="./blog.html">Blog</a>
-                  <li class="nav-item">
-                    <a href="./login.html"><button class="btn btn-danger" type="submit">Login</button></a>
-                    <a href="./register.html"><button class="btn btn-success" type="submit">Register</button></a>
-                  </li>
-            </ul>
-          </div>
+            <a class="navbar-brand" href="#">HaNoi Hotel</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto w-100 justify-content-end">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{about}">About</a>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{room}">Room</a>
+                    <li class="nav-item">
+                        <a class="nav-link" th:href="@{blog}">Blog</a>
+                    <li class="nav-item">
+                        <a th:href="@{login}">
+                            <button class="btn btn-danger" type="submit">Login</button>
+                        </a>
+                        <a th:href="@{register}">
+                            <button class="btn btn-success" type="submit">Register</button>
+                        </a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
-        <div class="container title-common">
-          <div class="row">
+    </nav>
+    <div class="container title-common">
+        <div class="row">
             <div class="set-position-title">
                 <h1>Blog</h1>
                 <a href="./index.html">Home</a>
                 <a href="#">Blog</a>
             </div>
-          </div>
-
         </div>
+
     </div>
+</div>
 
-    <!-- Main -->
-    <div class="main-blog">
-        <div class="container">
-            <div class="row blog-item-responsive">
-                <div class="col-md-4 item-grid">
-                    <div class="wrapper-item">
-                        <div class="item-image-blog-1">
-                            <div class="meta-chart">
-                                <div>2019-11-11</div>
-                                <div>Stallworthy</div>
-                            </div>
+<!-- Main -->
+<div class="main-blog">
+    <div class="container">
+        <div class="row blog-item-responsive">
+            <div class="col-md-4 item-grid">
+                <div class="wrapper-item">
+                    <div class="item-image-blog-1">
+                        <div class="meta-chart">
+                            <div>2019-11-11</div>
+                            <div>Stallworthy</div>
                         </div>
-                        <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Lên Lịch Cùng Hội Bạn Thân Check - In 5 Little Hong Kong Chất Lừ Giữa Lòng Sài Gòn</a></div>
                     </div>
-                    <div class="wrapper-item">
-                        <div class="item-image-blog-2">
-                            <div class="meta-chart">
-                                <div>2019-11-19</div>
-                                <div>Marriot</div>
-                            </div>
-                        </div>
-                        <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Vi Vu Xứ Trung Không Cần Visa, Vì Đã Có "Trung Hoa Thu Nhỏ" Giữa Lòng Hội An Đây Rồi!</a></div>
-                    </div>
+                    <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Lên Lịch Cùng Hội Bạn Thân
+                        Check - In 5 Little Hong Kong Chất Lừ Giữa Lòng Sài Gòn</a></div>
                 </div>
-
-                <div class="col-md-4 item-grid">
-                    <div class="wrapper-item">
-                        <div class="item-image-blog-3">
-                            <div class="meta-chart">
-                                <div>2019-12-11</div>
-                                <div>Cockley</div>
-                            </div>
-                        </div>
-                        <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Thử Làm "Người Tây Đô" 24h Với Bí Kíp Ăn Chơi Ở Cần Thơ</a></div>
-                    </div>
-                    <div class="wrapper-item">
-                        <div class="item-image-blog-4">
-                            <div class="meta-chart">
-                                <div>2019-11-19</div>
-                                <div>Lejeune</div>
-                            </div>
-                        </div>
-                        <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Lưu Nhanh 2 Thiên Đường Tắm Bùn Vừa Đẹp Vừa Thư Giãn, Trị Liệu "Đỉnh" Nhất Nha Trang</a></div>
-                    </div>
-                </div>
-
-                <div class="col-md-4">
-                    <div class="input-group mb-3 find-article">
-                        <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-                        <div class="input-group-append">
-                          <button class="btn btn-outline-secondary" type="button">Search</button>
+                <div class="wrapper-item">
+                    <div class="item-image-blog-2">
+                        <div class="meta-chart">
+                            <div>2019-11-19</div>
+                            <div>Marriot</div>
                         </div>
                     </div>
-
-                   <div class="custom-title-blog"><p class="h3">Random artiles</p></div>
-                    <div class="row clear-fix">
-                        <div class="col-md-3"><div class="img-clear-fix-1"></div></div>
-                        <div class="col-md-9"><a href="#" style="text-decoration: none;">Lưu Nhanh 2 Thiên Đường Tắm Bùn Vừa Đẹp Vừa Thư Giãn, Trị Liệu "Đỉnh" Nhất Nha Trang</a></div>
-                    </div>
-                    <div class="row icon-blog">
-                        <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-calendar-alt"></i> 2019-11-19</p>
-                        <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-user"></i> Lejeune</p>
-                    </div>
-
-                    <!-- Clear-Fix 2 -->
-                    <div class="row clear-fix">
-                        <div class="col-md-3"><div class="img-clear-fix-2"></div></div>
-                        <div class="col-md-9"><a href="#" style="text-decoration: none;">Lập Kèo "Càn Quét" Khu Tổ Hợp Ăn – Chơi Rộng 12000m2 Ở Đà Nẵng</a></div>
-                    </div>
-                    <div class="row icon-blog">
-                        <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-calendar-alt"></i> 2019-12-12</p>
-                        <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-user"></i> Rockwill</p>
-                    </div>
-
-                    <!-- Clear-Fix 3 -->
-                    <div class="row clear-fix">
-                        <div class="col-md-3"><div class="img-clear-fix-3"></div></div>
-                        <div class="col-md-9"><a href="#" style="text-decoration: none;">Tham Quan Shangri La - Địa Điểm “Đu Đưa” Không Nên Bỏ Lỡ Khi Đến Trung Quốc</a></div>
-                    </div>
-                    <div class="row icon-blog">
-                        <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-calendar-alt"></i> 2019-12-20 </p>
-                        <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-user"></i> Oxby</p>
-                    </div>
+                    <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Vi Vu Xứ Trung Không Cần
+                        Visa, Vì Đã Có "Trung Hoa Thu Nhỏ" Giữa Lòng Hội An Đây Rồi!</a></div>
                 </div>
             </div>
 
-            <div class="row pagging-blog">
-                <div class="col-md-6">
-                    <nav aria-label="Page navigation example">
-                        <ul class="pagination">
-                          <li class="page-item">
+            <div class="col-md-4 item-grid">
+                <div class="wrapper-item">
+                    <div class="item-image-blog-3">
+                        <div class="meta-chart">
+                            <div>2019-12-11</div>
+                            <div>Cockley</div>
+                        </div>
+                    </div>
+                    <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Thử Làm "Người Tây Đô" 24h
+                        Với Bí Kíp Ăn Chơi Ở Cần Thơ</a></div>
+                </div>
+                <div class="wrapper-item">
+                    <div class="item-image-blog-4">
+                        <div class="meta-chart">
+                            <div>2019-11-19</div>
+                            <div>Lejeune</div>
+                        </div>
+                    </div>
+                    <div style="margin: 20px 0; "><a href="#" style="text-decoration: none;">Lưu Nhanh 2 Thiên Đường Tắm
+                        Bùn Vừa Đẹp Vừa Thư Giãn, Trị Liệu "Đỉnh" Nhất Nha Trang</a></div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="input-group mb-3 find-article">
+                    <input type="text" class="form-control" placeholder="Search" aria-label="Search"
+                           aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                    </div>
+                </div>
+
+                <div class="custom-title-blog"><p class="h3">Random artiles</p></div>
+                <div class="row clear-fix">
+                    <div class="col-md-3">
+                        <div class="img-clear-fix-1"></div>
+                    </div>
+                    <div class="col-md-9"><a href="#" style="text-decoration: none;">Lưu Nhanh 2 Thiên Đường Tắm Bùn Vừa
+                        Đẹp Vừa Thư Giãn, Trị Liệu "Đỉnh" Nhất Nha Trang</a></div>
+                </div>
+                <div class="row icon-blog">
+                    <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-calendar-alt"></i> 2019-11-19</p>
+                    <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-user"></i> Lejeune</p>
+                </div>
+
+                <!-- Clear-Fix 2 -->
+                <div class="row clear-fix">
+                    <div class="col-md-3">
+                        <div class="img-clear-fix-2"></div>
+                    </div>
+                    <div class="col-md-9"><a href="#" style="text-decoration: none;">Lập Kèo "Càn Quét" Khu Tổ Hợp Ăn –
+                        Chơi Rộng 12000m2 Ở Đà Nẵng</a></div>
+                </div>
+                <div class="row icon-blog">
+                    <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-calendar-alt"></i> 2019-12-12</p>
+                    <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-user"></i> Rockwill</p>
+                </div>
+
+                <!-- Clear-Fix 3 -->
+                <div class="row clear-fix">
+                    <div class="col-md-3">
+                        <div class="img-clear-fix-3"></div>
+                    </div>
+                    <div class="col-md-9"><a href="#" style="text-decoration: none;">Tham Quan Shangri La - Địa Điểm “Đu
+                        Đưa” Không Nên Bỏ Lỡ Khi Đến Trung Quốc</a></div>
+                </div>
+                <div class="row icon-blog">
+                    <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-calendar-alt"></i> 2019-12-20 </p>
+                    <p style="margin-left: 17px; margin-top: 10px;"><i class="fas fa-user"></i> Oxby</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row pagging-blog">
+            <div class="col-md-6">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination">
+                        <li class="page-item">
                             <a class="page-link" href="#" aria-label="Previous">
-                              <span aria-hidden="true">&laquo;</span>
-                              <span class="sr-only">Previous</span>
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Previous</span>
                             </a>
-                          </li>
-                          <li class="page-item"><a class="page-link" href="#">1</a></li>
-                          <li class="page-item"><a class="page-link" href="#">2</a></li>
-                          <li class="page-item"><a class="page-link" href="#">3</a></li>
-                          <li class="page-item">
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
                             <a class="page-link" href="#" aria-label="Next">
-                              <span aria-hidden="true">&raquo;</span>
-                              <span class="sr-only">Next</span>
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Next</span>
                             </a>
-                          </li>
-                        </ul>
-                      </nav>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <p class="h4">About HaNoi Hotel</p>
+                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
+                    the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and
+                    Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the
+                    countries Vokalia and Consonantia, there live the blind texts.</p>
+
+                <div class="row logo-footer">
+                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-facebook fa-4x "></i></a>
+
+                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-instagram fa-4x"
+                                                               style="border-radius: 5px;"></i></a>
+
+                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-twitter fa-4x"></i></a>
                 </div>
             </div>
 
+            <div class="col-md-4">
+                <div class="h4">Have a Questions ?</div>
+                <div class="content-footer">
+                    <p><i class="fas fa-map-marker-alt fa-2x"></i> 144 Xuân Thủy - Cầu Giấy - Hà Nội</p>
+                    <p><i class="fas fa-phone fa-2x"></i> +8439 3929 1999</p>
+                    <p><i class="fas fa-envelope fa-2x"></i> doanhnh0801@gmail.com</p>
+                </div>
+            </div>
+
+            <div class="col-md-4 wrapper-feedback">
+                <div class="feedback">
+                    <p class="h3" style="padding-bottom: 30px;">Feedback</p>
+                    <!-- Name -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Name</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Name" aria-label="Name"
+                               aria-describedby="basic-addon1" required>
+                    </div>
+                    <!-- Email -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Email</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Email" aria-label="Email"
+                               aria-describedby="basic-addon1" required>
+                    </div>
+                    <!-- Phone -->
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="basic-addon1">Phone</span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Phone" aria-label="Phone"
+                               aria-describedby="basic-addon1">
+                    </div>
+                    <!-- Content -->
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text">Content</span>
+                        </div>
+                        <textarea class="form-control" aria-label="With textarea"></textarea>
+                    </div>
+
+                    <button type="button" class="btn btn-outline-primary btn-lg"
+                            style="float: right; margin-top: 15px;"><i class="fas fa-share"></i> Send
+                    </button>
+
+                </div>
+            </div>
         </div>
     </div>
+</footer>
 
-    <!-- Footer -->
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <p class="h4">About HaNoi Hotel</p>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
-            
-            <div class="row logo-footer">
-                <a href="fb.com" class="item-icon-logo"><i class="fab fa-facebook fa-4x "></i></a>
-  
-                <a href="fb.com" class="item-icon-logo"><i class="fab fa-instagram fa-4x" style="border-radius: 5px;"></i></a>
-  
-                <a href="fb.com" class="item-icon-logo"><i class="fab fa-twitter fa-4x"></i></a>
-            </div>
-          </div>
-  
-          <div class="col-md-4">
-            <div class="h4">Have a Questions ?</div>
-            <div class="content-footer">
-              <p><i class="fas fa-map-marker-alt fa-2x"></i> 144 Xuân Thủy - Cầu Giấy - Hà Nội</p>
-              <p><i class="fas fa-phone fa-2x"></i> +8439 3929 1999</p>
-              <p><i class="fas fa-envelope fa-2x"></i>   doanhnh0801@gmail.com</p>
-            </div>
-          </div>
-  
-          <div class="col-md-4 wrapper-feedback">
-            <div class="feedback">
-              <p class="h3" style="padding-bottom: 30px;">Feedback</p>
-              <!-- Name -->
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">Name</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1" required>
-              </div>
-              <!-- Email -->
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">Email</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1" required>
-              </div>
-              <!-- Phone -->
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span class="input-group-text" id="basic-addon1">Phone</span>
-                </div>
-                <input type="text" class="form-control" placeholder="Phone" aria-label="Phone" aria-describedby="basic-addon1">
-              </div>
-              <!-- Content -->
-              <div class="input-group">
-                <div class="input-group-prepend">
-                  <span class="input-group-text">Content</span>
-                </div>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
-              </div>
-  
-              <button type="button" class="btn btn-outline-primary btn-lg" style="float: right; margin-top: 15px;"><i class="fas fa-share"></i> Send</button>
-  
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    
-    
-    
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
 </body>
+</html>

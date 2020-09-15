@@ -2,21 +2,34 @@
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/login.css">
 </head>
 
 <body>
+    <div th:if="${param.success}" class="alert alert-success" id="success-alert" style="width: 50%">
+        <button type="button" class="close" data-dismiss="alert">x</button>
+        <strong>Success! </strong> Product have added to your wishlist.
+    </div>
+
     <form th:action="loginUser" method="post">
         <img src="https://cdn2.f-cdn.com/contestentries/365819/10129715/56e657a9c8e95_thumb900.jpg">
         <h2>Log In</h2>
         <input type="email" name="email" placeholder="Email" required/>
         <input type="password" name="password" placeholder="Password" required/>
         <span th:if="${param.error}" style="color: white">User or Password is invaid</span>
+<!--        <div th:if="${param.error}" class="alert alert-success">-->
+<!--            <strong>Success!</strong> This alert box could indicate a successful or positive action.-->
+<!--        </div>-->
         <button type="submit">Log In</button>
         <div>
             <a th:href="@{register}" class="redirect-register">Register</a>
             <a th:href="@{index}" class="go-back">Return Home</a>
         </div>
     </form>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./js/handle-event.js"></script>
 </body>
 </html>
