@@ -17,14 +17,12 @@ public class LoginController {
     public String registerUser(String userName, String email, String password,
                                String rePassword){
         if(!password.equals(rePassword)){
-//            System.out.println(password + "       " + rePassword);
             return "redirect:register?error";
         }else{
             UserEntity newUser = new UserEntity();
             newUser.setUserName(userName);
             newUser.setEmail(email);
             newUser.setPassword(password);
-//            System.out.println(newUser);
             userService.addUser(newUser);
             return "redirect:login?success";
         }
