@@ -79,6 +79,10 @@
     text-shadow: .4px .4px 5px rgba(0, 0, 0, .2);
 }
 
+.login-register{
+    position: fixed;
+    top: 100px;
+}
 
 @media (max-width: 765px){
     .room-style{

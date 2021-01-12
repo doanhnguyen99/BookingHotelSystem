@@ -35,7 +35,7 @@ public class LoginController {
         if(loginUser.isEmpty()){
             return "redirect:login?error";
         }else{
-            return "redirect:index";
+            return "redirect:index?success";
         }
     }
 }

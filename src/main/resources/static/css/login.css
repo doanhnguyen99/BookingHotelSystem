@@ -63,14 +63,24 @@ form button{
 }
 
 .go-back{
-    font-size: 14px;
-    color: rgb(190, 190, 201);
-    float: right;
+    color: #FFFFFF;
     text-decoration: none;
-    display: block;
+    font-size: 14px;
+    float: right;
 }
 
 .redirect-register{
+    color: #FFFFFF;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.go-back:hover{
+    color: rgb(190, 190, 201);
+    text-decoration: none;
+}
+
+.redirect-register:hover{
     color: rgb(190, 190, 201);
     text-decoration: none;
 }
