@@ -21,12 +21,14 @@ body{
 }
 
 .navbar .navbar-brand {
+    color: #fff;
     font-size: 30px;
   }
   .navbar .nav-item {
     padding: 10px 20px;
   }
   .navbar .nav-link {
+      color: #fff;
     font-size: 20px;
     margin-left: 10px;
   }
