@@ -44,5 +44,10 @@ public class RoomController {
         return mav;
     }
 
+    @RequestMapping("/delete/{id}")
+    public String deleteProduct(@PathVariable(name = "id") Long id) {
+        roomService.deleteRoom(id);
+        return "redirect:/room/all";
+    }
 
 }
