@@ -3,41 +3,64 @@
       xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <title>Edit Room</title>
 </head>
 <body>
 <div align="center">
-    <h1>Edit Product</h1>
+    <h1 style="margin: 50px 0">Edit Product</h1>
     <br />
-    <form th:action="@{/room/save}" th:object="${room}"
-          method="post">
-
-        <table border="0" cellpadding="10">
-            <tr>
-                <td>Room ID:</td>
-                <td>
-                    <input type="text" th:field="*{id}" readonly="readonly" />
-                </td>
-            </tr>
-            <tr>
-                <td>Room Type:</td>
-                <td>
-                    <input type="text" th:field="*{roomType}" />
-                </td>
-            </tr>
-            <tr>
-                <td>Content:</td>
-                <td><input type="text" th:field="*{content}" /></td>
-            </tr>
-            <tr>
-                <td>Price:</td>
-                <td><input type="text" th:field="*{price}" /></td>
-            </tr>
-            <tr>
-                <td colspan="2"><button type="submit">Save</button> </td>
-            </tr>
-        </table>
-    </form>
+    <div style="width: 50%" class="edit_room">
+        <form th:action="@{/room/save}" th:object="${room}"
+              method="post">
+                <div>
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Room Id</span>
+                                </div>
+                                <input type="text" class="form-control" th:field="*{id}" aria-label="Default" aria-describedby="inputGroup-sizing-default" readonly="readonly">
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">Room Type</span>
+                                </div>
+                                <input type="text" class="form-control" th:field="*{roomType}" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+                            </div>
+                        </td>
+                    </tr>
+                </div>
+               <div>
+                   <tr>
+                       <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                               <span class="input-group-text" id="inputGroup-sizing-default">Content</span>
+                           </div>
+                           <input type="text" class="form-control" th:field="*{content}" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+                       </div>
+                   </tr>
+                   <tr>
+                       <div class="input-group mb-3">
+                           <div class="input-group-prepend">
+                               <span class="input-group-text" id="inputGroup-sizing-default">Price</span>
+                           </div>
+                           <input type="text" class="form-control" th:field="*{price}" aria-label="Default" aria-describedby="inputGroup-sizing-default" required>
+                       </div>
+                   </tr>
+               </div>
+                <tr>
+                    <td colspan="2"><button type="submit" class="btn btn-success btn-lg">Save</button></td>
+                </tr>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </div>
 </body>
 </html>
