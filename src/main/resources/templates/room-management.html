@@ -45,24 +45,72 @@
     </table>
 
     <br>
-    Total Items: [[${totalItems}]]
+    Total Rooms: [[${totalItems}]]
     <br>
-    <a th:if="${currentPage > 1}" th:href="@{'/room/page/1'}">First</a>
-    <span th:unless="${currentPage > 1}">First</span>
+    <br>
 
-    <a th:if="${currentPage > 1}" th:href="@{'/room/page/' + ${currentPage - 1}}">Previous</a>
-    <span th:unless="${currentPage > 1}">Previous</span>
+<!--    <nav aria-label="Page navigation example">-->
+<!--        <ul class="pagination">-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" th:if="${currentPage > 1}" th:href="@{'/room/page/1'}">First</a>-->
+<!--                <span th:unless="${currentPage > 1}">First</span>-->
+<!--            </li>-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" th:if="${currentPage > 1}" th:href="@{'/room/page/' + ${currentPage - 1}}">Previous</a>-->
+<!--                <span th:unless="${currentPage > 1}">Previous</span>-->
+<!--            </li>-->
+<!--            <li class="page-item">-->
+<!--                <span th:each="i: ${#numbers.sequence(1, totalPages)}">-->
+<!--                    <a class="page-link" th:if="${currentPage != i}" th:href="@{'/room/page/' + ${i}}">[[${i}]]</a>-->
+<!--                    <span th:unless="${currentPage != i}">[[${i}]]</span>-->
+<!--                    &nbsp;-->
+<!--                </span>-->
+<!--            </li>-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${currentPage + 1}}">Next</a>-->
+<!--                <span th:unless="${currentPage < totalPages}">Next</span>-->
+<!--            </li>-->
+<!--            <li class="page-item">-->
+<!--                <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${totalPages}}">Last</a>-->
+<!--                <span th:unless="${currentPage < totalPages}">Last</span>-->
+<!--            </li>-->
+<!--        </ul>-->
+<!--    </nav>-->
 
-    <span th:each="i: ${#numbers.sequence(1, totalPages)}">
-    <a th:if="${currentPage != i}" th:href="@{'/room/page/' + ${i}}">[[${i}]]</a>
-    <span th:unless="${currentPage != i}">[[${i}]]</span>
-    &nbsp;
-    </span>
+    <div style="display: flex; justify-content: center">
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a class="page-link" th:if="${currentPage > 1}" th:href="@{'/room/page/1'}">First</a>
+                    <span class="page-link" th:unless="${currentPage > 1}">First</span>
+                </li>
 
-    <a th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${currentPage + 1}}">Next</a>
-    <span th:unless="${currentPage < totalPages}">Next</span>
-    <a th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${totalPages}}">Last</a>
-    <span th:unless="${currentPage < totalPages}">Last</span>
+
+                <li class="page-item">
+                    <a class="page-link" th:if="${currentPage > 1}" th:href="@{'/room/page/' + ${currentPage - 1}}">Previous</a>
+                    <span class="page-link" th:unless="${currentPage > 1}">Previous</span>
+                </li>
+
+
+                <span th:each="i: ${#numbers.sequence(1, totalPages)}">
+               <a class="page-link" th:if="${currentPage != i}" th:href="@{'/room/page/' + ${i}}">[[${i}]]</a>
+                <span class="page-link" th:unless="${currentPage != i}">[[${i}]]</span>
+                &nbsp;
+            </span>
+
+                <li class="page-item">
+                    <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${currentPage + 1}}">Next</a>
+                    <span class="page-link" th:unless="${currentPage < totalPages}">Next</span>
+                </li>
+
+                <li class="page-item">
+                    <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${totalPages}}">Last</a>
+                    <span class="page-link" th:unless="${currentPage < totalPages}">Last</span>
+                </li>
+
+            </ul>
+        </nav>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
