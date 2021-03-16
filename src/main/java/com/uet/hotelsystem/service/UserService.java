@@ -1,6 +1,7 @@
 package com.uet.hotelsystem.service;
 
-import com.uet.hotelsystem.model.UserEntity;
+import com.uet.hotelsystem.model.Provider;
+import com.uet.hotelsystem.model.User;
 import com.uet.hotelsystem.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,17 +16,30 @@ public class UserService{
     private UserRepository userRepository;
 
     @Transactional
-     public List<UserEntity> getAllUser(){
+     public List<User> getAllUser(){
         return userRepository.findAll();
     }
 
-    @Transactional
-    public void addUser(UserEntity userEntity){
+    public void save(User userEntity){
         userRepository.save(userEntity);
     }
 
     @Transactional
-    public Optional<UserEntity> getUserByEmailAndPassword(String email, String password){
+    public Optional<User> getUserByEmailAndPassword(String email, String password){
          return userRepository.findByEmailAndPassword(email, password);
+    }
+
+    public void processOAuthPostLogin(String username) {
+        User existUser = userRepository.getUserByUsername(username);
+
+        if (existUser == null) {
+            User newUser = new User();
+            newUser.setUsername(username);
+            newUser.setProvider(Provider.GOOGLE);
+            newUser.setEnabled(true);
+
+            userRepository.save(newUser);
+            System.out.println("Created new user: " + username);
+        }
     }
 }
