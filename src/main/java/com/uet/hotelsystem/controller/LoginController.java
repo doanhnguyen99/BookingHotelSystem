@@ -1,12 +1,11 @@
 package com.uet.hotelsystem.controller;
 
-import com.uet.hotelsystem.model.UserEntity;
+import com.uet.hotelsystem.model.User;
 import com.uet.hotelsystem.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-
-import java.util.Optional;
 
 @Controller
 public class LoginController {
@@ -14,28 +13,31 @@ public class LoginController {
     private UserService userService;
 
     @PostMapping("/registerUser")
-    public String registerUser(String userName, String email, String password,
-                               String rePassword){
-        if(!password.equals(rePassword)){
+    public String registerUser(String username, String email, String password,
+                               String rePassword) {
+        if (!password.equals(rePassword)) {
             return "redirect:register?error";
-        }else{
-            UserEntity newUser = new UserEntity();
-            newUser.setUserName(userName);
+        } else {
+            User newUser = new User();
+            newUser.setUsername(username);
             newUser.setEmail(email);
+            newUser.setEnabled(true);
+            newUser.setRole("ROLE_USER");
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            password = encoder.encode(password);
             newUser.setPassword(password);
-            userService.addUser(newUser);
+            userService.save(newUser);
             return "redirect:login?success";
         }
     }
 
-
-    @PostMapping("/loginUser")
-    public String loginUser(String email, String password){
-        Optional<UserEntity> loginUser = userService.getUserByEmailAndPassword(email, password);
-        if(loginUser.isEmpty()){
-            return "redirect:login?error";
-        }else{
-            return "redirect:index?success";
-        }
-    }
+//    @PostMapping("/loginUser")
+//    public String loginUser(String e, String p){
+//        Optional<User> loginUser = userService.getUserByEmailAndPassword(e, p);
+//        if(loginUser.isEmpty()){
+//            return "redirect:login?error";
+//        }else{
+//            return "redirect:index?success";
+//        }
+//    }
 }

@@ -1,14 +1,22 @@
 package com.uet.hotelsystem.repository;
 
-import com.uet.hotelsystem.model.UserEntity;
+import com.uet.hotelsystem.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
 @Repository
-public interface UserRepository extends JpaRepository<UserEntity, Long> {
-    Optional<UserEntity> findByEmailAndPassword(String email, String password);
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByEmailAndPassword(String email, String password);
+//
+//    Optional<User> findByEmail(String email);
 
-    Optional<UserEntity> findByEmail(String email);
+    @Query("SELECT u FROM User u WHERE u.username = :username")
+    public User getUserByUsername(@Param("username") String username);
+
+    @Query("SELECT u FROM User u WHERE u.email = :email")
+    public User getUserByEmail(@Param("email") String email);
 }
