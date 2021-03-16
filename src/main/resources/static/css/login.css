@@ -1,91 +1,198 @@
-body{
-    font-family: "Roboto", sans-serif;
-    background-image: url('../image/beach-2179183_1920.jpg');
-    background-size: cover;
-    background-position: center center;
-    height: 100vh;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+/*body{*/
+/*    font-family: "Roboto", sans-serif;*/
+/*    background-image: url('../image/beach-2179183_1920.jpg');*/
+/*    background-size: cover;*/
+/*    background-position: center center;*/
+/*    height: 100vh;*/
+/*    overflow: hidden;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
 
-form{
-    position: relative;
-    background-color: rgb(78, 75, 75);
-    padding: 1rem 1.4rem;
+/*form{*/
+/*    position: relative;*/
+/*    background-color: rgb(78, 75, 75);*/
+/*    padding: 1rem 1.4rem;*/
 
-}
+/*}*/
 
-form img{
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: white;
-    border-radius: 50%; 
-    width: 75px;
-    height: 75px;
-    padding: 3px;
-    max-width: 100%;
-}
+/*form img{*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    background-color: white;*/
+/*    border-radius: 50%; */
+/*    width: 75px;*/
+/*    height: 75px;*/
+/*    padding: 3px;*/
+/*    max-width: 100%;*/
+/*}*/
 
-form h2{
-    text-align: center;
-    color: #f3f3f3;
-    margin-top: 3rem;
-    font-size: 2rem;
-    font-weight: 400;
-    text-transform: uppercase;
-}
+/*form h2{*/
+/*    text-align: center;*/
+/*    color: #f3f3f3;*/
+/*    margin-top: 3rem;*/
+/*    font-size: 2rem;*/
+/*    font-weight: 400;*/
+/*    text-transform: uppercase;*/
+/*}*/
 
-form input{
-    display: block;
-    margin: 1rem 0;
-    padding: 10px 14px;
-    border: none;
-    outline: none;
-    border-radius: 2rem;
-    background-color: rgba(199, 194, 194, 0.151);
-    color: white;
-    font-size: 18px;
-}
+/*form input{*/
+/*    display: block;*/
+/*    margin: 1rem 0;*/
+/*    padding: 10px 14px;*/
+/*    border: none;*/
+/*    outline: none;*/
+/*    border-radius: 2rem;*/
+/*    background-color: rgba(199, 194, 194, 0.151);*/
+/*    color: white;*/
+/*    font-size: 18px;*/
+/*}*/
 
-form button{
-    padding: 8px 16px;
-    display: block;
-    width: 100%;
-    background-color: #f5f5f5;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    margin: 2rem 0 1rem 0; 
-}
+/*form button{*/
+/*    padding: 8px 16px;*/
+/*    display: block;*/
+/*    width: 100%;*/
+/*    background-color: #f5f5f5;*/
+/*    border: none;*/
+/*    border-radius: 3px;*/
+/*    cursor: pointer;*/
+/*    margin: 2rem 0 1rem 0; */
+/*}*/
 
-.go-back{
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 14px;
-    float: right;
-}
+/*.go-back{*/
+/*    color: #FFFFFF;*/
+/*    text-decoration: none;*/
+/*    font-size: 14px;*/
+/*    float: right;*/
+/*}*/
 
-.redirect-register{
-    color: #FFFFFF;
-    text-decoration: none;
-    font-size: 14px;
-}
+/*.redirect-register{*/
+/*    color: #FFFFFF;*/
+/*    text-decoration: none;*/
+/*    font-size: 14px;*/
+/*}*/
 
-.go-back:hover{
-    color: rgb(190, 190, 201);
-    text-decoration: none;
-}
+/*.go-back:hover{*/
+/*    color: rgb(190, 190, 201);*/
+/*    text-decoration: none;*/
+/*}*/
 
-.redirect-register:hover{
-    color: rgb(190, 190, 201);
-    text-decoration: none;
-}
+/*.redirect-register:hover{*/
+/*    color: rgb(190, 190, 201);*/
+/*    text-decoration: none;*/
+/*}*/
 
 .login-register{
     position: fixed;
     top: 100px;
+}
+
+/* Made with love by Mutiullah Samim*/
+
+@import url('https://fonts.googleapis.com/css?family=Numans');
+
+html,body{
+    background-image: url('http://getwallpapers.com/wallpaper/full/a/5/d/544750.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    font-family: 'Numans', sans-serif;
+}
+
+.container{
+    height: 100%;
+    align-content: center;
+}
+
+a{
+    color: white
+}
+
+a:hover{
+    text-decoration: none;
+    color: white;
+}
+
+input{
+    margin-bottom: 30px;
+}
+
+.card{
+    height: 370px;
+    margin-top: auto;
+    margin-bottom: auto;
+    width: 400px;
+    background-color: rgba(0,0,0,0.5) !important;
+}
+
+.social_icon span{
+    font-size: 60px;
+    margin-left: 10px;
+    color: #FFC312;
+}
+
+.social_icon span:hover{
+    color: white;
+    cursor: pointer;
+}
+
+.card-header h3{
+    color: white;
+}
+
+.social_icon{
+    position: absolute;
+    right: 20px;
+    top: -45px;
+}
+
+.input-group-prepend span{
+    width: 50px;
+    background-color: #FFC312;
+    color: black;
+    border:0 !important;
+}
+
+input:focus{
+    outline: 0 0 0 0  !important;
+    box-shadow: 0 0 0 0 !important;
+
+}
+
+.remember{
+    color: white;
+}
+
+.remember input
+{
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+    margin-right: 5px;
+}
+
+.item-input{
+    margin-bottom: 25px;
+}
+
+.login_btn{
+    color: black;
+    background-color: #FFC312;
+    width: 100px;
+}
+
+.login_btn:hover{
+    color: black;
+    background-color: white;
+}
+
+.links{
+    color: white;
+}
+
+.links a{
+    margin-left: 4px;
 }
