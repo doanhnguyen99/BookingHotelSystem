@@ -61,7 +61,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginPage("/login")
                     .usernameParameter("email")
                     .passwordParameter("password")
-                    .defaultSuccessUrl("/room/all")
+                    .defaultSuccessUrl("/index")
                 .and()
                 .oauth2Login()
                     .loginPage("/login")
@@ -75,7 +75,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         System.out.println("Authentication name: " + authentication.getName());
                         CustomOAuth2User oauthUser = (CustomOAuth2User) authentication.getPrincipal();
                         userService.processOAuthPostLogin(oauthUser.getEmail());
-                        response.sendRedirect("/room/all");
+                        response.sendRedirect("/index");
                     }
                 });
     }
