@@ -25,4 +25,9 @@ public class HotelSystemApplication {
         }
         return "redirect:/";
     }
+
+    @GetMapping("/admin-dashboard")
+    public String showAdminPage(){
+        return "admin-dashboard";
+    }
 }
