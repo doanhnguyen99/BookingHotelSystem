@@ -30,14 +30,4 @@ public class LoginController {
             return "redirect:login?success";
         }
     }
-
-//    @PostMapping("/loginUser")
-//    public String loginUser(String e, String p){
-//        Optional<User> loginUser = userService.getUserByEmailAndPassword(e, p);
-//        if(loginUser.isEmpty()){
-//            return "redirect:login?error";
-//        }else{
-//            return "redirect:index?success";
-//        }
-//    }
 }

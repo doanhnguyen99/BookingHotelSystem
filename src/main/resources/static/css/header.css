@@ -7,7 +7,12 @@ body{
     background-color: #f5f5f5;
 }
 
-.header{
+@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
+* {
+    font-family: "Titillium Web", sans-serif;
+}
+
+.image-cover-index{
     background: linear-gradient(rgba(101, 84, 72, 0.7), rgba(101, 84, 72, 0.7)), url(../image/hotels.jpg);
     /* background: linear-gradient(to right top, #313333, #434645, #565958, #6b6d6a, #81827e), url(../image/bg-masthead.jpg); */
     height: 730px;
@@ -15,10 +20,9 @@ body{
     background-size: cover;
 }
 
-@import url("https://fonts.googleapis.com/css?family=Titillium+Web");
-* {
-  font-family: "Titillium Web", sans-serif;
-}
+/*.header{*/
+/*    */
+/*}*/
 
 .navbar .navbar-brand {
     color: #fff;

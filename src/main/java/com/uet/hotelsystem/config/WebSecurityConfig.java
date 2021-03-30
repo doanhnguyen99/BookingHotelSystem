@@ -55,13 +55,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.authorizeRequests()
                 .antMatchers("/css/**", "/image/**", "/js/**",  "/", "/register",
                         "/index", "/about", "/blog", "/room", "/registerUser", "/login", "/oauth/**").permitAll()
+                .antMatchers("/admin-dashboard", "/room/**").hasRole("ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().permitAll()
                     .loginPage("/login")
                     .usernameParameter("email")
                     .passwordParameter("password")
-                    .defaultSuccessUrl("/index")
+                    .defaultSuccessUrl("/loginSuccess")
+//                    .successForwardUrl("/admin-dashboard")
                 .and()
                 .oauth2Login()
                     .loginPage("/login")
@@ -75,7 +77,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                         System.out.println("Authentication name: " + authentication.getName());
                         CustomOAuth2User oauthUser = (CustomOAuth2User) authentication.getPrincipal();
                         userService.processOAuthPostLogin(oauthUser.getEmail());
-                        response.sendRedirect("/index");
+                        response.sendRedirect("/loginSuccess");
                     }
                 });
     }

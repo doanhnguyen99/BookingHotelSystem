@@ -4,6 +4,13 @@
 <head>
     <meta charset="utf-8"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3/dist/css/uikit.min.css">
+    <script src="./js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3/dist/js/uikit-icons.min.js"></script>
+
+
+
     <title>Room Management</title>
     <style>
         a{
@@ -12,6 +19,10 @@
     </style>
 </head>
 <body>
+
+<div th:insert="fragments/footer-home :: footer"></div>
+<div style="width: 50%;" th:insert="fragments/admin-dashboard :: side-bar"></div>
+
 <div align="center">
     <h1 style="margin: 45px 0">Room Management</h1>
     <button type="button" class="btn btn-primary btn-lg"><a th:href="@{/room/new}" style="color: #FFFFFF"
@@ -19,7 +30,7 @@
 
 
     <br/><br/>
-    <table class="table table-striped" style="width: 80%">
+    <table class="table table-striped" style="margin-left:150px; width: 80%;">
         <thead>
         <tr>
             <th>Room ID</th>
@@ -33,7 +44,7 @@
         <tr th:each=" rooms : ${listRooms}">
             <td th:text="${rooms.id}">Product ID</td>
             <td th:text="${rooms.roomType}">Name</td>
-            <td th:text="${rooms.content}">Brand</td>
+            <td style="word-break: break-word;" th:text="${rooms.content}"></td>
             <td th:text="${rooms.price}">Made in</td>
             <td>
                 <button type="button" class="btn btn-secondary"><a style="color: #FFFFFF" th:href="@{'/room/edit/' + ${rooms.id}}">Edit</a></button>
@@ -49,33 +60,6 @@
     <br>
     <br>
 
-<!--    <nav aria-label="Page navigation example">-->
-<!--        <ul class="pagination">-->
-<!--            <li class="page-item">-->
-<!--                <a class="page-link" th:if="${currentPage > 1}" th:href="@{'/room/page/1'}">First</a>-->
-<!--                <span th:unless="${currentPage > 1}">First</span>-->
-<!--            </li>-->
-<!--            <li class="page-item">-->
-<!--                <a class="page-link" th:if="${currentPage > 1}" th:href="@{'/room/page/' + ${currentPage - 1}}">Previous</a>-->
-<!--                <span th:unless="${currentPage > 1}">Previous</span>-->
-<!--            </li>-->
-<!--            <li class="page-item">-->
-<!--                <span th:each="i: ${#numbers.sequence(1, totalPages)}">-->
-<!--                    <a class="page-link" th:if="${currentPage != i}" th:href="@{'/room/page/' + ${i}}">[[${i}]]</a>-->
-<!--                    <span th:unless="${currentPage != i}">[[${i}]]</span>-->
-<!--                    &nbsp;-->
-<!--                </span>-->
-<!--            </li>-->
-<!--            <li class="page-item">-->
-<!--                <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${currentPage + 1}}">Next</a>-->
-<!--                <span th:unless="${currentPage < totalPages}">Next</span>-->
-<!--            </li>-->
-<!--            <li class="page-item">-->
-<!--                <a class="page-link" th:if="${currentPage < totalPages}" th:href="@{'/room/page/' + ${totalPages}}">Last</a>-->
-<!--                <span th:unless="${currentPage < totalPages}">Last</span>-->
-<!--            </li>-->
-<!--        </ul>-->
-<!--    </nav>-->
 
     <div style="display: flex; justify-content: center">
         <nav aria-label="Page navigation">
