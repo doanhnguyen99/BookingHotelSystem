@@ -12,11 +12,17 @@
     <link rel="stylesheet" href="./css/main.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="./css/modal.css">
+<!--    <link rel="stylesheet" href="./css/login.css">-->
 </head>
 
 <body>
 <!-- Header -->
 <header th:insert="fragments/header-home :: header"></header>
+
+<div th:if="${param.success}" class="alert alert-success login-register" id="success-alert" style="width: 50%; margin-left: 450px;">
+    <button type="button" class="close" data-dismiss="alert">x</button>
+    <strong>Success! </strong> Login successful.
+</div>
 
 <div class="image-cover-index">
     <div class="container">

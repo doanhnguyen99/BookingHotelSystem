@@ -42,10 +42,10 @@ public class HotelSystemApplication {
         String role =  authResult.getAuthorities().toString();
 
         if(role.contains("ROLE_ADMIN")){
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin-dashboard"));
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/admin-dashboard?success"));
         }
         else if(role.contains("ROLE_USER")) {
-            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/index"));
+            response.sendRedirect(response.encodeRedirectURL(request.getContextPath() + "/index?success"));
         }
     }
 }

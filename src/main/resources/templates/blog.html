@@ -16,53 +16,11 @@
 </head>
 
 <body>
+
+
+<header th:insert="fragments/header-home :: header"></header>
+
 <div class="header-blog">
-    <nav class="navbar sticky-top navbar-expand-lg bg-dark custom-header">
-        <div class="container">
-            <a class="navbar-brand" th:href="@{/home}">HaNoi Hotel</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto w-100 justify-content-end">
-                    <li class="nav-item active">
-                        <a class="nav-link" th:href="@{/}">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{about}">About</a>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{room}">Room</a>
-                    <li class="nav-item">
-                        <a class="nav-link" th:href="@{blog}">Blog</a>
-                    <li sec:authorize="isAnonymous()" class="nav-item">
-                        <a th:href="@{/login}">
-                            <button class="btn btn-danger" type="submit">Login</button>
-                        </a>
-                        <a th:href="@{/register}">
-                            <button class="btn btn-success" type="submit">Register</button>
-                        </a>
-                    </li>
-
-                    <li>
-                        <div sec:authorize="isAuthenticated()" class="btn-group" style="margin-top: 13px;margin-left: 20px;}">
-                            <button type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <i class="fas fa-user-alt"></i> Account
-                            </button>
-                            <div  class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Wellcome, <span sec:authentication="name"></span></a>
-                                <div class="dropdown-divider"></div>
-                                <form th:action="@{/logout}" method="post">
-                                    <button type="submit" class="btn btn-light dropdown-item">Logout</button>
-                                </form>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
     <div class="container title-common">
         <div class="row">
             <div class="set-position-title">
@@ -71,7 +29,6 @@
                 <a href="#">Blog</a>
             </div>
         </div>
-
     </div>
 </div>
 
@@ -203,79 +160,7 @@
 </div>
 
 <!-- Footer -->
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <p class="h4">About HaNoi Hotel</p>
-                <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live
-                    the blind texts. Far far away, behind the word mountains, far from the countries Vokalia and
-                    Consonantia, there live the blind texts. Far far away, behind the word mountains, far from the
-                    countries Vokalia and Consonantia, there live the blind texts.</p>
-
-                <div class="row logo-footer">
-                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-facebook fa-4x "></i></a>
-
-                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-instagram fa-4x"
-                                                               style="border-radius: 5px;"></i></a>
-
-                    <a href="fb.com" class="item-icon-logo"><i class="fab fa-twitter fa-4x"></i></a>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="h4">Have a Questions ?</div>
-                <div class="content-footer">
-                    <p><i class="fas fa-map-marker-alt fa-2x"></i> 144 Xuân Thủy - Cầu Giấy - Hà Nội</p>
-                    <p><i class="fas fa-phone fa-2x"></i> +8439 3929 1999</p>
-                    <p><i class="fas fa-envelope fa-2x"></i> doanhnh0801@gmail.com</p>
-                </div>
-            </div>
-
-            <div class="col-md-4 wrapper-feedback">
-                <div class="feedback">
-                    <p class="h3" style="padding-bottom: 30px;">Feedback</p>
-                    <!-- Name -->
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Name</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Name" aria-label="Name"
-                               aria-describedby="basic-addon1" required>
-                    </div>
-                    <!-- Email -->
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Email</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Email" aria-label="Email"
-                               aria-describedby="basic-addon1" required>
-                    </div>
-                    <!-- Phone -->
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="basic-addon1">Phone</span>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Phone" aria-label="Phone"
-                               aria-describedby="basic-addon1">
-                    </div>
-                    <!-- Content -->
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Content</span>
-                        </div>
-                        <textarea class="form-control" aria-label="With textarea"></textarea>
-                    </div>
-
-                    <button type="button" class="btn btn-outline-primary btn-lg"
-                            style="float: right; margin-top: 15px;"><i class="fas fa-share"></i> Send
-                    </button>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
+<footer th:insert="fragments/footer-home :: footer"></footer>
 
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
